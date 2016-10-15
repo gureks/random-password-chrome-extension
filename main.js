@@ -40,3 +40,33 @@ function strongestGenerator(pwdlength) {
 	}
 	document.getElementById("password").value = Password;
 }
+
+function value() {
+	var buttons = document.getElementsByName("strength");
+	for (var i = 0; i < buttons.length; i++) {
+		if (buttons[i].checked) {
+			var x = buttons[i].value;
+		}
+	}
+
+	if(x.localeCompare("weak")==1) {
+		var length = document.getElementById('length').value;
+		simpleGenerator(length);
+	}
+	else if(x.localeCompare("medium")==1) {
+		var length = document.getElementById('length').value;
+		mediumGenerator(length);
+	}
+	else if(x.localeCompare("strong")==1) {
+		var length = document.getElementById('length').value;
+		strongGenerator(length);
+	}
+	else if(x.localeCompare("strongest")==1) {
+		var length = document.getElementById('length').value;
+		strongestGenerator(length);
+	}
+}
+
+window.onload = function() {
+	document.getElementById("submit").addEventListener('click', value);
+}
