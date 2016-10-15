@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>
 		Random Password Generator
@@ -23,7 +24,7 @@
 			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 		}
 
-		#logo{
+		#logo {
 			font-family: 'Snippet', sans-serif;
 			font-size: 1.5em;
 			font-weight: bold;
@@ -31,32 +32,34 @@
 		}
 	</style>
 
-	<script src = "main.js"></script>
+	<script src="main.js"></script>
 </head>
+
 <body style="padding-top: 50px;">
 	<div classs="navbar">
-	<nav class="navbar navbar-fixed-top" role="navigation">
-  		<div class="logo" style="float:left;">
-  			<img src="icon.png" height="30px">Random Password Generator
-  		</div>
-	</nav>
+		<nav class="navbar navbar-fixed-top" role="navigation">
+			<div class="logo" style="float:left;">
+				<img src="icon.png" height="30px">Random Password Generator
+			</div>
+		</nav>
 	</div>
 
 	<div class="container-fluid">
-		<div class = "row">
-		<form>
-			<input name="strength" type="radio" id="strength" value="weak"/>Weak
-			<br /><input name="strength" type="radio" id="strength" value="medium"/>Medium
-			<br /><input name="strength" type="radio" id="strength" value="strong"/>Strong
-			<br /><input name="strength" type="radio" id="strength" value="strongest"/>Strongest
-			<br />Length:	<input name="length" type="number" id="length" />
-			<br />Password: <input type="text" id="password" value="">
-		</form>
-		<br /><button id="submit">Submit</button>
+		<div class="row">
+			<form>
+				<input name="strength" type="radio" value="weak" /> Weak
+				<br /><input name="strength" type="radio" value="medium" /> Medium
+				<br /><input name="strength" type="radio" value="strong" /> Strong
+				<br /><input name="strength" type="radio" value="strongest" /> Strongest
+				<br />Length: <input name="length" type="number" id="length" />
+				<br />Password: <input type="text" id="password" value="">
+			</form>
+			<br /><button id="submit">Submit</button>
 		</div>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/jquery.min.js"></script>
 	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
 </body>
+
 </html>
