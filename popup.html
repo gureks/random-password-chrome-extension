@@ -13,9 +13,13 @@
 	<meta name="author" content="Gurek Singh">
 	<meta name="URL" content="https://github.com/gureks/random-password-chrome-extension">
 
-	<link href="static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/css/materialize.min.css" rel="stylesheet">
 
 	<style type="text/css">
+		body {
+			width: 300px;
+		}
+
 		@font-face {
 			font-family: 'Snippet';
 			font-style: normal;
@@ -25,41 +29,84 @@
 		}
 
 		#logo {
+			text-align: center;
 			font-family: 'Snippet', sans-serif;
 			font-size: 1.5em;
 			font-weight: bold;
-			margin-left: 10px;
+			margin: 10px;
+			padding: 5px;
 		}
+
+		#logo img {
+			height: 20px;
+			margin-right: 5px;
+		}
+
+		.btn {
+			width: 100%;
+		}
+
 	</style>
 
 	<script src="main.js"></script>
 </head>
 
-<body style="padding-top: 50px;">
-	<div classs="navbar">
-		<nav class="navbar navbar-fixed-top" role="navigation">
-			<div class="logo" style="float:left;">
-				<img src="icon.png" height="30px">Random Password Generator
-			</div>
-		</nav>
+<body>
+
+	<div id="logo">
+		<img src="icon.png">Random Password Generator
 	</div>
 
-	<div class="container-fluid">
+	<div class="">
 		<div class="row">
-			<form>
-				<input name="strength" type="radio" value="weak" /> Weak
-				<br /><input name="strength" type="radio" value="medium" /> Medium
-				<br /><input name="strength" type="radio" value="strong" /> Strong
-				<br /><input name="strength" type="radio" value="strongest" /> Strongest
-				<br />Length: <input name="length" type="number" id="length" />
-				<br />Password: <input type="text" id="password" value="">
+			<form class="col s12 m12 l12">
+				<div class="row">
+					<div class="col s12 m12 l12">
+						<input name="strength" type="radio" value="weak" id="weak" />
+						<label for="weak">Weak</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 m12 l12">
+						<input name="strength" type="radio" value="medium" id="medium" />
+						<label for="medium">Medium</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 m12 l12">
+						<input name="strength" type="radio" value="strong" id="strong" />
+						<label for="strong">Strong</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 m12 l12">
+						<input name="strength" type="radio" value="strong" id="strongest" />
+						<label for="strongest">Strongest</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m12 l12">
+						<input name="length" type="number" id="length" placeholder="" />
+						<label for="length">Length</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m12 l12">
+						<input type="text" id="password" value="" placeholder="">
+						<label for="password">Password</label>
+					</div>
+				</div>
 			</form>
-			<br /><button id="submit">Submit</button>
+			<div class="row">
+				<div class="col s12 m12 l12">
+					<button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit</button>
+				</div>
+			</div>
 		</div>
 	</div>
 
 	<script type="text/javascript" src="static/js/jquery.min.js"></script>
-	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="static/js/materialize.min.js"></script>
 </body>
 
 </html>
