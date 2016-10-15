@@ -34,6 +34,7 @@
 	<script src = "main.js"></script>
 </head>
 <body>
+	<div classs="navbar">
 	<nav class="navbar navbar-fixed-top" role="navigation">
   		<div class="logo" style="float:left;">
   			<img src="icon.png" height="30px">Random Password Generator
@@ -47,11 +48,50 @@
     		</button>
   		</div>
 	</nav>
+	</div>
 
 	<div class="container-fluid">
+		<div class = "row">
+		<form>
+			<br /><br /><input name="strength" type="radio" id="strength" value="weak"/>Weak
+			<br /><input name="strength" type="radio" id="strength" value="medium"/>Medium
+			<br /><input name="strength" type="radio" id="strength" value="strong"/>Strong
+			<br /><input name="strength" type="radio" id="strength" value="strongest"/>Strongest
+			<br />Length:	<input name="length" type="number" id="length" />
+			<br />Password: <input type="text" id="password" value="">
+		</form>
+		<br /><button onclick="value()">Submit</button>
+		</div>
 	</div>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function value()
+		{
+			var x = document.getElementById("strength").value;
+
+			if(x.localeCompare("weak")==1)
+			{
+				var length = document.getElementById('length').value;
+				simpleGenerator(length);
+			}
+			else if(x.localeCompare("medium")==1)
+			{
+				var length = document.getElementById('length').value;
+				mediumGenerator(length);
+			}
+			else if(x.localeCompare("strong")==1)
+			{
+				var length = document.getElementById('length').value;
+				strongGenerator(length);
+			}
+			else if(x.localeCompare("strongest")==1)
+			{
+				var length = document.getElementById('length').value;
+				strongestGenerator(length);
+			}
+		}
+	</script>
 </body>
 </html>

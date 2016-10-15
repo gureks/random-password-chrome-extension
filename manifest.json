@@ -1,20 +1,31 @@
 {
-	"manifest_version":	1,
+	"manifest_version":	2,
 	"name":	"Random Password Generator",
 	"version":	"1.0",
 	"author":	"gureks",
-	"default_locale":	"en",
+	//"default_locale":	"en",
 	"description":	"This extension generates random passwords based on the difficulty level you choose. Difficulty level varies on the basis of numbers, alphabets, capitals and special characters. You can set the number of characters you want in your password.",
 	
 	"browser_action":	{
-		"default_icon":	"icon.png",
-		"default_popup":	"popup.html"
+		"default_icon"	:	"icon.png",
+		"default_popup"	:	"popup.html",
+		"default_title"	:	"Generate Password"	
 	},
 
+	"background": {
+		"page"	:	"popup.html",
+		"persistent"	: true
+	},
+//	"content_scripts": [
+//		{
+//			"js": ["main.js"]
+//		}
+//	],
+
 	"offline_enabled":	true,
-	"incognito":	"spanning, split, or not_allowed",
+	"incognito":	"spanning",
 	"permissions":	[
-		"main.js",
+	//	"main.js",
 		"tabs"
 	]
 }
