@@ -4,14 +4,14 @@
 	<title>
 		Random Password Generator
 	</title>
-	
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<meta name="description" content="This extension generates random passwords based on the difficulty level you choose. Difficulty level varies on the basis of numbers, alphabets, capitals and special characters. You can set the number of characters you want in your password.">
 	<meta name="keywords" content="Random, Password, Generator, gureks">
 	<meta name="author" content="Gurek Singh">
 	<meta name="URL" content="https://github.com/gureks/random-password-chrome-extension">
-	
+
 	<link href="static/css/bootstrap.min.css" rel="stylesheet">
 
 	<style type="text/css">
@@ -33,19 +33,11 @@
 
 	<script src = "main.js"></script>
 </head>
-<body>
+<body style="padding-top: 50px;">
 	<div classs="navbar">
 	<nav class="navbar navbar-fixed-top" role="navigation">
   		<div class="logo" style="float:left;">
   			<img src="icon.png" height="30px">Random Password Generator
-  		</div>
-  		<div class="navbar-header">
-   			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-    		  <span class="sr-only">Toggle navigation</span>
-    		  <span class="icon-bar"></span>
-    		  <span class="icon-bar"></span>
-    		  <span class="icon-bar"></span>
-    		</button>
   		</div>
 	</nav>
 	</div>
@@ -53,45 +45,18 @@
 	<div class="container-fluid">
 		<div class = "row">
 		<form>
-			<br /><br /><input name="strength" type="radio" id="strength" value="weak"/>Weak
+			<input name="strength" type="radio" id="strength" value="weak"/>Weak
 			<br /><input name="strength" type="radio" id="strength" value="medium"/>Medium
 			<br /><input name="strength" type="radio" id="strength" value="strong"/>Strong
 			<br /><input name="strength" type="radio" id="strength" value="strongest"/>Strongest
 			<br />Length:	<input name="length" type="number" id="length" />
 			<br />Password: <input type="text" id="password" value="">
 		</form>
-		<br /><button onclick="value()">Submit</button>
+		<br /><button id="submit">Submit</button>
 		</div>
 	</div>
-	
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		function value()
-		{
-			var x = document.getElementById("strength").value;
-
-			if(x.localeCompare("weak")==1)
-			{
-				var length = document.getElementById('length').value;
-				simpleGenerator(length);
-			}
-			else if(x.localeCompare("medium")==1)
-			{
-				var length = document.getElementById('length').value;
-				mediumGenerator(length);
-			}
-			else if(x.localeCompare("strong")==1)
-			{
-				var length = document.getElementById('length').value;
-				strongGenerator(length);
-			}
-			else if(x.localeCompare("strongest")==1)
-			{
-				var length = document.getElementById('length').value;
-				strongestGenerator(length);
-			}
-		}
-	</script>
 </body>
 </html>
